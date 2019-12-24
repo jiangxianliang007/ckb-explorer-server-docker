@@ -10,11 +10,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
  libpq5 libsodium23 gcc git unzip tzdata
 
-COPY ./ckb-explorer-server.zip .
-COPY ./setup.sh .
 RUN apt-get install -y \
  zlib1g-dev libxml2-dev
-RUN bash ./setup.sh
+RUN git clone --depth=1 \
+    -b master \
+    https://github.com/nervosnetwork/ckb-explorer.git \
+    /opt/ckb-explorer-server \
+  && cd /opt/ckb-explorer-server \
+  && bundle install
 
 COPY ./entrypoint.sh .
 
