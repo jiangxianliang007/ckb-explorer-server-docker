@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y \
  zlib1g-dev libxml2-dev
 RUN git clone --depth=1 \
-    -b master \
+    -b aggron \
     https://github.com/nervosnetwork/ckb-explorer.git \
     /opt/ckb-explorer-server \
   && cd /opt/ckb-explorer-server \
