@@ -25,7 +25,7 @@ ckb_statistic_info_chart_data_updater() {
 }
 
 run_puma() {
-   PIDFILE=/run/puma.pid puma -b tcp://0.0.0.0:8080  -e production
+  /opt/ckb-explorer-server/bin/rails server -P /run/puma.pid -b 0.0.0.0 -p 8080  -e production
 #curl 'localhost:30001/api/v1/blocks' -H 'Accept: application/vnd.api+json' -H 'Content-Type: application/vnd.api+json'
 }
 
