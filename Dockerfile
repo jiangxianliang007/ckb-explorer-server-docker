@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y \
  zlib1g-dev libxml2-dev
 
-ADD https://github.com/nervosnetwork/ckb-explorer/archive/aggron.zip src.zip
+ADD https://github.com/nervosnetwork/ckb-explorer/archive/master.zip src.zip
 RUN unzip src.zip -d /root/pkgs/ \
   && mv /root/pkgs/* /opt/ckb-explorer-server \
   && cd /opt/ckb-explorer-server \
