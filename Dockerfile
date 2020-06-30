@@ -17,7 +17,9 @@ ADD https://github.com/nervosnetwork/ckb-explorer/archive/master.zip src.zip
 RUN unzip src.zip -d /root/pkgs/ \
   && mv /root/pkgs/* /opt/ckb-explorer-server \
   && cd /opt/ckb-explorer-server \
-  && bundle install
+  && gem install bundler \
+  && bundle install \
+  && bundle install --without development test
 
 COPY ./entrypoint.sh .
 
